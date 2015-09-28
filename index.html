@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<!--
+	Solarize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		{% block head %}
+		<title>{% block title %} Smart Spender{% endblock %}</title>
+		{% endblock %}
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		 <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		  <link rel="stylesheet" href="../static/css/normalize.css">
+		  <link rel="stylesheet" href="../static/css/skeleton.css">
+		
+			<link rel="stylesheet" href="{{ url_for('static', filename='../static/css/skeleton.css') }}" />
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+		    <div class="row">
+		      <div class="one-half column" style="margin-top: 35%">
+		        <h1>SmartSpenders</h1>
+		        <p>Daemon Dash 2015</p>
+		        <a href="#graphs"><input type="button" value="graphs"></a>
+		      </div>
+		      <div class="one-half column" style="margin-top: 40%">
+		        Using Capital One's API Nessie, we were able to create a program to successfully monitor children's spending habits. This would ideally be used by parents as either a web or mobile app as a monitoring tool. SmartSpenders provides the unique prediction tool, in which it analyzes how the child is spending his or money, and tells the parent how much money he or she will spend by the end of the month, using existing data.
+		      </div>
+		    </div>
+		    <div style="height:550px"></div>
+		    <div class="row">
+		    	<div class = "one-half column" id="graphs"><h3>George's Spending Data</h3></div>
+		    	<div class = "one-half column">Below, you will find a graph of your child's spending. It is an analysis of his spending habits, and the prediction for the rest of the month.</div>
+		    </div>
+		    <br>
+		    <br>
+			<div class="row" style="height: 600px">
+		<div id={{ chartID|safe }} class="chart" style="height: 600px; width: 590x"></div>
+			<script>
+				var chart_id = {{ chartID|safe }}
+				var series = {{ series|safe }}
+				var title = {{ title|safe }}
+				var xAxis = {{ xAxis|safe }}
+				var yAxis = {{ yAxis|safe }}
+				var chart = {{ chart|safe }}
+			</script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			<script src="http://code.highcharts.com/highcharts.js"></script>
+			<script src="../static/js/main.js"></script>
+			</div>
+			
+				</section>
+
+			<br>
+			<h2 style="text-align:center">Table of Purchases</h2>
+			<br>
+			<div style="row" >
+			<div align="center">
+				<div class = "four columns" style="width:900px;height:500px;overflow:auto;">
+				<table >
+					<tr>
+						<th>Item</th>
+						<th>Price</th>
+						<th>Date (in Oct.)</th>
+					</tr>
